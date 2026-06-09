@@ -155,12 +155,12 @@ add_table_slide(
     "KPI Comparison: 10.8 → 10.9",
     ["Metric", "KPI", "10.8", "10.9", "Δ", "Trend"],
     [
-        ["Breached FF (stories)", "0", "37", "27", "-10", "✅ Improved (-27%)"],
-        ["Breached CF (stories)", "0", "23", "32", "+9", "❌ Worse (+39%)"],
-        ["Breached CF (bugs)", "0", "4", "5", "+1", "➡️ Flat"],
-        ["Regression total", "<10", "50", "95", "+45", "❌ Worse (+90%)"],
-        ["Regression in hardening", "<4", "17", "40", "+23", "❌ Worse (+135%)"],
-        ["Automation detection", "+20%", "32%", "12.6%", "-19pp", "❌ Dropped"],
+        ["Breached FF (stories)", "0", "37", "25", "-12", "✅ Improved (-32%)"],
+        ["Breached CF (stories)", "0", "23", "36", "+13", "❌ Worse (+57%)"],
+        ["Breached CF (bugs)", "0", "4", "6", "+2", "❌ Worse"],
+        ["Regression total", "<10", "50", "152", "+102", "❌ Worse (+204%)"],
+        ["Regression in hardening", "<4", "17", "60", "+43", "❌ Worse (+253%)"],
+        ["Automation detection", "+20%", "32%", "TBD", "—", "❌ Dropped"],
     ],
     col_widths=[3.5, 1.0, 1.0, 1.0, 1.0, 4.0]
 )
@@ -170,23 +170,23 @@ add_table_slide(
     "Per-GM Breakdown",
     ["Metric", "Dana 10.8→10.9", "Shlomi 10.8→10.9", "Rajeev 10.8→10.9"],
     [
-        ["Breached FF", "7→4 ✅", "0→10 ❌", "30→13 ✅"],
-        ["Breached CF Stories", "6→0 ✅", "3→6 ❌", "14→26 ❌"],
-        ["Breached CF Bugs", "2→1 ✅", "2→2 ➡️", "0→2 ❌"],
-        ["Regression total", "19→54 ❌", "4→14 ❌", "27→27 ➡️"],
-        ["Regression hardening", "11→24 ❌", "1→10 ❌", "5→6 ➡️"],
-        ["Verdict", "FF/CF great\nRegressions bad", "All worse", "FF great\nCF doubled"],
+        ["Breached FF", "7→6 ✅", "0→8 ❌", "30→11 ✅"],
+        ["Breached CF Stories", "6→2 ✅", "3→9 ❌", "14→25 ❌"],
+        ["Breached CF Bugs", "2→2 ➡️", "2→2 ➡️", "0→2 ❌"],
+        ["Regression total", "19→95 ❌", "4→27 ❌", "27→30 ❌"],
+        ["Regression hardening", "11→37 ❌", "1→17 ❌", "5→6 ➡️"],
+        ["Verdict", "FF/CF improved\nRegressions 5×", "All worse", "FF great\nCF doubled"],
     ],
     col_widths=[3.0, 3.2, 3.2, 3.2]
 )
 
 # 4: What Improved
 add_content_slide("✅ Improvements 10.8 → 10.9", [
-    ("FF discipline improved: 37 → 27 breaches (-27%)", 18, ACCENT_GREEN, False),
-    ("Dana CF breach → zero stories at Code Freeze", 18, ACCENT_GREEN, False),
-    ("Rajeev FF halved: 30 → 13", 18, ACCENT_GREEN, False),
-    ("Apex regressions halved: 6 → 3", 18, ACCENT_GREEN, False),
-    ("Rajeev regressions stable despite more scope", 18, ACCENT_GREEN, False),
+    ("FF discipline improved: 37 → 25 breaches (-32%)", 18, ACCENT_GREEN, False),
+    ("Dana CF breach: 6 → 2 stories at Code Freeze", 18, ACCENT_GREEN, False),
+    ("Rajeev FF significantly improved: 30 → 11", 18, ACCENT_GREEN, False),
+    ("Dana FF improved: 7 → 6", 18, ACCENT_GREEN, False),
+    ("Rajeev regressions nearly stable: 27 → 30", 18, ACCENT_GREEN, False),
     ("", 12, WHITE, False),
     ("Positive pattern: upgrade testing during development (Rajeev)", 16, LIGHT_GRAY, False),
 ])
@@ -196,45 +196,47 @@ add_section_slide("Root Cause Analysis")
 
 # 6: Regression RCA
 add_table_slide(
-    "Regression Total: 50 → 95 (+90%) — Top Contributors",
+    "Regression Total: 50 → 152 (+204%) — Top Contributors",
     ["Squad (GM)", "10.8", "10.9", "Δ", "Root Cause"],
     [
-        ["Nils (Dana)", "16", "47", "+31", "React Migration — all new bugs = regressions"],
-        ["GreenBoat (Rajeev)", "15", "17", "+2", "Upgrade scenarios, EF cache, code conflicts"],
-        ["Driver (Shlomi)", "1", "8", "+7", "VME/VAIO — low quality dev testing"],
-        ["Azure (Dana)", "3", "6", "+3", "GPv2 performance, recovery stuck"],
-        ["VRA (Shlomi)", "3", "5", "+2", "Scale issues at large setups"],
-        ["Apex (Rajeev)", "6", "3", "-3", "✅ Improved"],
+        ["Nils (Dana)", "16", "60", "+44", "React Migration — all new bugs = regressions"],
+        ["GreenBoat (Rajeev)", "15", "22", "+7", "Upgrade scenarios, EF cache, code conflicts"],
+        ["Cloud Compliance (Dana)", "—", "19", "—", "Security/compliance bugs, 0 by automation"],
+        ["Driver (Shlomi)", "1", "11", "+10", "VME/VAIO — low quality dev testing"],
+        ["VRA (Shlomi)", "3", "10", "+7", "Scale issues at large setups"],
+        ["Azure (Dana)", "3", "8", "+5", "GPv2 performance, recovery stuck"],
+        ["Apex (Rajeev)", "6", "8", "+2", "Secret Centralization + late testing"],
     ],
     col_widths=[2.5, 0.8, 0.8, 0.8, 7.5]
 )
 
 # 7: FF & CF Breach RCA
 add_content_slide("FF & CF Breach Root Causes", [
-    ("FF Breaches (27 total):", 20, ACCENT_ORANGE, True),
+    ("FF Breaches (25 total):", 20, ACCENT_ORANGE, True),
     ("  • Cyber Resilience (7): Late requirements — design approved end Sprint 4", 16, WHITE, False),
     ("  • Apex Legends (7): Stories in RFT but QA bandwidth limited", 16, WHITE, False),
     ("  • GreenBoat (4): Dependencies on Linux migration + waiver", 16, WHITE, False),
-    ("  • Nils (2): FE tweaks enabled late (same as 10.8!)", 16, WHITE, False),
+    ("  • Nils (2), Azure (2), AI Agents (2), Driver (1)", 16, WHITE, False),
     ("", 10, WHITE, False),
-    ("CF Breaches (32 stories):", 20, ACCENT_RED, True),
+    ("CF Breaches (36 stories):", 20, ACCENT_RED, True),
     ("  • GreenBoat (13): Public Cloud test setup not ready", 16, WHITE, False),
     ("  • Apex Legends (12): Testing started late, stories stuck in QA", 16, WHITE, False),
-    ("  • Cyber Resilience (4): LTS late start", 16, WHITE, False),
-    ("  • Driver (2): Urgent HF + HV stabilization", 16, WHITE, False),
+    ("  • Mavka (4), Cyber Resilience (4): Late start", 16, WHITE, False),
+    ("  • AI Agents (2), Driver (1)", 16, WHITE, False),
 ])
 
 # 8: Automation drop
-add_content_slide("Automation Detection: 32% → 12.6%", [
+add_content_slide("Automation Detection Rate — Dropped", [
     ("Most concerning metric — target is +20% improvement, we went backwards", 18, ACCENT_RED, True),
     ("", 10, WHITE, False),
     ("Why?", 20, ACCENT_ORANGE, True),
-    ("  • New bugs concentrated in React (Nils) and VME (Driver)", 16, WHITE, False),
+    ("  • New bugs concentrated in React (Nils=60) and VME (Driver=11)", 16, WHITE, False),
     ("  • These areas have LOW automation coverage", 16, WHITE, False),
     ("  • React has Cypress but insufficient for complex scenarios", 16, WHITE, False),
     ("  • VME/Driver has minimal automation — 'N/A' per Shlomi", 16, WHITE, False),
+    ("  • Cloud Compliance (19 regressions): 0/19 found by automation", 16, WHITE, False),
     ("", 10, WHITE, False),
-    ("Impact: 12 of 95 bugs found by automation (vs 16/50 in 10.8)", 16, LIGHT_GRAY, False),
+    ("152 regressions total — vast majority in low-automation areas", 16, LIGHT_GRAY, False),
 ])
 
 # 9: Section - RFT
@@ -342,9 +344,9 @@ add_table_slide(
     "10.8 Findings: What Was Actually Addressed?",
     ["10.8 Finding", "10.9 Result", "Verdict"],
     [
-        ["Don't enable FE tweaks late", "Same issue, Nils 16→47", "❌ NOT ADDRESSED"],
+        ["Don't enable FE tweaks late", "Same issue, Nils 16→60", "❌ NOT ADDRESSED"],
         ["React side-by-side comparison", "Not done", "❌ NOT ADDRESSED"],
-        ["Increase Cypress coverage", "Rate dropped 32%→12.6%", "❌ NOT ADDRESSED"],
+        ["Increase Cypress coverage", "Rate dropped significantly", "❌ NOT ADDRESSED"],
         ["Clarify cross-team ownership", "Same GB/AWS blame", "❌ NOT ADDRESSED"],
         ["Upgrade test during dev", "Rajeev regressions FLAT", "✅ ADDRESSED"],
         ["Scale setups lacking", "Still not ready", "❌ NOT ADDRESSED"],
@@ -370,14 +372,14 @@ add_content_slide("10.8 → 10.9 Improvement Score", [
 add_section_slide("Action Items")
 
 # 21: Dana actions
-add_content_slide("Dana Mittelman — Priority: REGRESSION (54 bugs)", [
+add_content_slide("Dana Mittelman — Priority: REGRESSION (95 bugs)", [
     ("D1: Enforce tweak activation policy", 18, WHITE, True),
     ("    No FE tweak after Sprint 5. Dev+QA sign-off required.", 14, LIGHT_GRAY, False),
     ("    Target: Zero regressions from late-activated tweaks", 14, ACCENT_GREEN, False),
     ("", 6, WHITE, False),
     ("D2: React Migration quality gate", 18, WHITE, True),
     ("    Side-by-side visual comparison with AngularJS before merge", 14, LIGHT_GRAY, False),
-    ("    Target: Nils regressions < 20 (down from 47)", 14, ACCENT_GREEN, False),
+    ("    Target: Nils regressions < 20 (down from 60)", 14, ACCENT_GREEN, False),
     ("", 6, WHITE, False),
     ("D3: Cypress coverage plan for React", 18, WHITE, True),
     ("    Top 5 high-traffic pages covered by Sprint 3", 14, LIGHT_GRAY, False),
@@ -391,7 +393,7 @@ add_content_slide("Dana Mittelman — Priority: REGRESSION (54 bugs)", [
 add_content_slide("Shlomi Apel — Priority: ALL METRICS REGRESSED", [
     ("S1: Driver squad — mandatory dev self-testing checklist", 18, WHITE, True),
     ("    5 basic scenarios per feature before 'Ready for Testing'", 14, LIGHT_GRAY, False),
-    ("    Target: Driver regressions < 4 (down from 8)", 14, ACCENT_GREEN, False),
+    ("    Target: Driver regressions < 4 (down from 11)", 14, ACCENT_GREEN, False),
     ("", 6, WHITE, False),
     ("S2: HV testing setup always-available policy", 18, WHITE, True),
     ("    Target: Zero CF breaches from setup unavailability", 14, ACCENT_GREEN, False),
@@ -454,12 +456,13 @@ add_content_slide("Jira Links — Drill Down & Analyze", [
     ("  • CF Bugs: https://zerto.atlassian.net/issues/?filter=21638", 13, LIGHT_GRAY, False),
     ("", 6, WHITE, False),
     ("Regressions per Squad (10.9):", 18, ACCENT_BLUE, True),
-    ("  • Nils (47): Squad - Eng - Nils + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • GreenBoat (17): Squad GreenBoat + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • Driver (8): Squad Driver + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • Azure (6): Squad Cloud Azure + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • VRA (5): Squad VRA + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • Apex (3): Squad Apex Legends + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
+    ("  • Nils (60): Squad - Eng - Nils + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
+    ("  • GreenBoat (22): Squad GreenBoat + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
+    ("  • Cloud Compliance (19): Squad Cloud Compliance + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
+    ("  • Driver (11): Squad Driver + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
+    ("  • VRA (10): Squad VRA + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
+    ("  • Azure (8): Squad Cloud Azure + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
+    ("  • Apex (8): Squad Apex Legends + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
     ("", 6, WHITE, False),
     ("All 10.9 Regressions:", 18, ACCENT_BLUE, True),
     ("  • affectedVersion=10.9 AND Regression=Yes AND status not in (Obsolete)", 13, LIGHT_GRAY, False),
@@ -468,14 +471,14 @@ add_content_slide("Jira Links — Drill Down & Analyze", [
 # 26: Summary
 add_content_slide("Summary & Next Steps", [
     ("What went right:", 22, ACCENT_GREEN, True),
-    ("  FF discipline improved (-27%), Dana CF→zero, Rajeev FF halved", 16, WHITE, False),
+    ("  FF improved (-32%), Dana CF 6→2, Rajeev FF 30→11", 16, WHITE, False),
     ("", 8, WHITE, False),
     ("What went wrong:", 22, ACCENT_RED, True),
-    ("  Regressions +90%, CF +39%, Automation rate halved", 16, WHITE, False),
+    ("  Regressions +204% (50→152), CF +57%, Automation rate dropped", 16, WHITE, False),
     ("  6/8 improvements from 10.8 NOT addressed", 16, WHITE, False),
     ("", 8, WHITE, False),
     ("Root causes:", 22, ACCENT_ORANGE, True),
-    ("  React/Nils tweaks, QA queue bottleneck (Rajeev), late requirements", 16, WHITE, False),
+    ("  React/Nils (60), Cloud Compliance (19), QA queue (Rajeev), late requirements", 16, WHITE, False),
     ("", 8, WHITE, False),
     ("For 10.10 — non-negotiables:", 22, ACCENT_BLUE, True),
     ("  1. No tweak activation after Sprint 5", 16, WHITE, False),
