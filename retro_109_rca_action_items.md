@@ -6,14 +6,14 @@
 
 ## 📊 KPI Comparison: 10.8 → 10.9 (Our Squads Only)
 
-| Metric | KPI | 10.8 | 10.9 | Δ | Trend |
-|--------|-----|------|------|---|-------|
-| **Breached FF** (open stories) | 0 | 37 | 27 | -10 | ✅ Improved (-27%) |
-| **Breached CF** (open stories) | 0 | 23 | 32 | +9 | ❌ Worse (+39%) |
-| **Breached CF** (open bugs) | 0 | 4 | 5 | +1 | ➡️ Flat |
-| **Regression total** | <10 | 50 | 95 | +45 | ❌ Worse (+90%) |
-| **Regression in hardening** | <4 | 17 | 40 | +23 | ❌ Worse (+135%) |
-| **Regression by automation** | +20% rate | 32% | 12.6% | -19.4pp | ❌ Dropped significantly |
+| Metric | KPI | 10.8 | 10.9 | Δ | Trend | Jira |
+|--------|-----|------|------|---|-------|------|
+| **Breached FF** (open stories) | 0 | 37 | [25](https://zerto.atlassian.net/issues/?filter=21636) | -12 | ✅ Improved (-32%) | [Filter 21636](https://zerto.atlassian.net/issues/?filter=21636) |
+| **Breached CF** (open stories) | 0 | 23 | [36](https://zerto.atlassian.net/issues/?filter=21637) | +13 | ❌ Worse (+57%) | [Filter 21637](https://zerto.atlassian.net/issues/?filter=21637) |
+| **Breached CF** (open bugs) | 0 | 4 | [6](https://zerto.atlassian.net/issues/?filter=21638) | +2 | ❌ Worse | [Filter 21638](https://zerto.atlassian.net/issues/?filter=21638) |
+| **Regression total** | <10 | 50 | [152](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20-%20Eng%20-%20Nils%22%2C%22Squad%20Cloud%20Azure%22%2C%22Squad%20Cloud%20Opus%22%2C%22Squad%20-%20Eng%20-%20Hyper-V%22%2C%22Squad%20AI%20Agents%22%2C%22Squad%20Cloud%20Compliance%22%2C%22Squad%20VRA%22%2C%22Squad%20Cyber%20Resilience%22%2C%22Squad%20Driver%22%2C%22Squad%20Mavka%22%2C%22Squad%20Apex%20Legends%22%2C%22Squad%20GreenBoat%22%2C%22Squad%20Core%20Services%22%29%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | +102 | ❌ Worse (+204%) | [JQL](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20-%20Eng%20-%20Nils%22%2C%22Squad%20Cloud%20Azure%22%2C%22Squad%20Cloud%20Opus%22%2C%22Squad%20-%20Eng%20-%20Hyper-V%22%2C%22Squad%20AI%20Agents%22%2C%22Squad%20Cloud%20Compliance%22%2C%22Squad%20VRA%22%2C%22Squad%20Cyber%20Resilience%22%2C%22Squad%20Driver%22%2C%22Squad%20Mavka%22%2C%22Squad%20Apex%20Legends%22%2C%22Squad%20GreenBoat%22%2C%22Squad%20Core%20Services%22%29%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **Regression in hardening** | <4 | 17 | 60 | +43 | ❌ Worse (+253%) | (created >= 2026-02-17) |
+| **Regression by automation** | +20% rate | 32% | TBD | — | ❌ Dropped | — |
 
 ---
 
@@ -21,55 +21,87 @@
 
 ### Dana Mittelman
 
-| Metric | 10.8 | 10.9 | Δ |
-|--------|------|------|---|
-| Breached FF | 7 | 4 | ✅ -3 |
-| Breached CF Stories | 6 | 0 | ✅ -6 |
-| Breached CF Bugs | 2 | 1 | ✅ -1 |
-| Regression total | 19 | 54 | ❌ +35 |
-| Regression hardening | 11 | 24 | ❌ +13 |
+Squads: Nils, Azure, Opus, Hyper-V, AI Agents, Cloud Compliance
 
-**FF/CF: Significantly improved.** CF breaches went to zero stories.
-**Regressions: Massively worse.** 19 → 54 (+184%), driven entirely by Squad Nils (React Migration).
+| Metric | 10.8 | 10.9 | Δ | Jira |
+|--------|------|------|---|------|
+| Breached FF | 7 | [6](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20-%20Eng%20-%20Nils%22%2C%22Squad%20Cloud%20Azure%22%2C%22Squad%20Cloud%20Opus%22%2C%22Squad%20-%20Eng%20-%20Hyper-V%22%2C%22Squad%20AI%20Agents%22%2C%22Squad%20Cloud%20Compliance%22%29%20AND%20filter%20%3D%2021636) | ✅ -1 | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20-%20Eng%20-%20Nils%22%2C%22Squad%20Cloud%20Azure%22%2C%22Squad%20Cloud%20Opus%22%2C%22Squad%20-%20Eng%20-%20Hyper-V%22%2C%22Squad%20AI%20Agents%22%2C%22Squad%20Cloud%20Compliance%22%29%20AND%20filter%20%3D%2021636) |
+| Breached CF Stories | 6 | [2](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20-%20Eng%20-%20Nils%22%2C%22Squad%20Cloud%20Azure%22%2C%22Squad%20Cloud%20Opus%22%2C%22Squad%20-%20Eng%20-%20Hyper-V%22%2C%22Squad%20AI%20Agents%22%2C%22Squad%20Cloud%20Compliance%22%29%20AND%20filter%20%3D%2021637) | ✅ -4 | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20-%20Eng%20-%20Nils%22%2C%22Squad%20Cloud%20Azure%22%2C%22Squad%20Cloud%20Opus%22%2C%22Squad%20-%20Eng%20-%20Hyper-V%22%2C%22Squad%20AI%20Agents%22%2C%22Squad%20Cloud%20Compliance%22%29%20AND%20filter%20%3D%2021637) |
+| Breached CF Bugs | 2 | [2](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20-%20Eng%20-%20Nils%22%2C%22Squad%20Cloud%20Azure%22%2C%22Squad%20Cloud%20Opus%22%2C%22Squad%20-%20Eng%20-%20Hyper-V%22%2C%22Squad%20AI%20Agents%22%2C%22Squad%20Cloud%20Compliance%22%29%20AND%20filter%20%3D%2021638) | ➡️ Same | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20-%20Eng%20-%20Nils%22%2C%22Squad%20Cloud%20Azure%22%2C%22Squad%20Cloud%20Opus%22%2C%22Squad%20-%20Eng%20-%20Hyper-V%22%2C%22Squad%20AI%20Agents%22%2C%22Squad%20Cloud%20Compliance%22%29%20AND%20filter%20%3D%2021638) |
+| Regression total | 19 | [95](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20-%20Eng%20-%20Nils%22%2C%22Squad%20Cloud%20Azure%22%2C%22Squad%20Cloud%20Opus%22%2C%22Squad%20-%20Eng%20-%20Hyper-V%22%2C%22Squad%20AI%20Agents%22%2C%22Squad%20Cloud%20Compliance%22%29%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | ❌ +76 | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20-%20Eng%20-%20Nils%22%2C%22Squad%20Cloud%20Azure%22%2C%22Squad%20Cloud%20Opus%22%2C%22Squad%20-%20Eng%20-%20Hyper-V%22%2C%22Squad%20AI%20Agents%22%2C%22Squad%20Cloud%20Compliance%22%29%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| Regression hardening | 11 | 37 | ❌ +26 | (created >= 2026-02-17) |
+
+**Per-squad regression breakdown:**
+| Squad | Regressions | Hardening | FF | CF |
+|-------|:-----------:|:---------:|:--:|:--:|
+| [Nils](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20-%20Eng%20-%20Nils%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 60 | 27 | 2 | 0 |
+| [Cloud Compliance](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cloud%20Compliance%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 19 | 2 | 0 | 0 |
+| [Azure](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cloud%20Azure%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 8 | 4 | 2 | 0 |
+| [Opus](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cloud%20Opus%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 4 | 4 | 0 | 0 |
+| [AI Agents](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20AI%20Agents%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 4 | 0 | 2 | 2 |
+| Hyper-V | 0 | 0 | 0 | 0 |
+
+**FF/CF: Improved.** CF stories down 6→2.
+**Regressions: Massively worse.** 19 → 95 (+400%), driven by Nils (60) and Cloud Compliance (19).
 
 ### Shlomi Apel
 
-| Metric | 10.8 | 10.9 | Δ |
-|--------|------|------|---|
-| Breached FF | 0 | 10 | ❌ +10 |
-| Breached CF Stories | 3 | 6 | ❌ +3 |
-| Breached CF Bugs | 2 | 2 | ➡️ Same |
-| Regression total | 4 | 14 | ❌ +10 |
-| Regression hardening | 1 | 10 | ❌ +9 |
+Squads: VRA, Cyber Resilience, Driver, Mavka
 
-**All metrics worse.** New issues: Driver squad (8 regressions from 1), Cyber Resilience FF breaches (7), and VRA scale regressions.
+| Metric | 10.8 | 10.9 | Δ | Jira |
+|--------|------|------|---|------|
+| Breached FF | 0 | [8](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20VRA%22%2C%22Squad%20Cyber%20Resilience%22%2C%22Squad%20Driver%22%2C%22Squad%20Mavka%22%29%20AND%20filter%20%3D%2021636) | ❌ +8 | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20VRA%22%2C%22Squad%20Cyber%20Resilience%22%2C%22Squad%20Driver%22%2C%22Squad%20Mavka%22%29%20AND%20filter%20%3D%2021636) |
+| Breached CF Stories | 3 | [9](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20VRA%22%2C%22Squad%20Cyber%20Resilience%22%2C%22Squad%20Driver%22%2C%22Squad%20Mavka%22%29%20AND%20filter%20%3D%2021637) | ❌ +6 | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20VRA%22%2C%22Squad%20Cyber%20Resilience%22%2C%22Squad%20Driver%22%2C%22Squad%20Mavka%22%29%20AND%20filter%20%3D%2021637) |
+| Breached CF Bugs | 2 | [2](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20VRA%22%2C%22Squad%20Cyber%20Resilience%22%2C%22Squad%20Driver%22%2C%22Squad%20Mavka%22%29%20AND%20filter%20%3D%2021638) | ➡️ Same | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20VRA%22%2C%22Squad%20Cyber%20Resilience%22%2C%22Squad%20Driver%22%2C%22Squad%20Mavka%22%29%20AND%20filter%20%3D%2021638) |
+| Regression total | 4 | [27](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20VRA%22%2C%22Squad%20Cyber%20Resilience%22%2C%22Squad%20Driver%22%2C%22Squad%20Mavka%22%29%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | ❌ +23 | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20VRA%22%2C%22Squad%20Cyber%20Resilience%22%2C%22Squad%20Driver%22%2C%22Squad%20Mavka%22%29%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| Regression hardening | 1 | 17 | ❌ +16 | (created >= 2026-02-17) |
+
+**Per-squad regression breakdown:**
+| Squad | Regressions | Hardening | FF | CF |
+|-------|:-----------:|:---------:|:--:|:--:|
+| [Driver](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Driver%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 11 | 10 | 1 | 1 |
+| [VRA](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20VRA%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 10 | 6 | 0 | 0 |
+| [Mavka](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Mavka%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 5 | 0 | 0 | 4 |
+| [Cyber Resilience](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cyber%20Resilience%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 1 | 1 | 7 | 4 |
+
+**All metrics worse.** Driver (11 reg, 10 in hardening), VRA (10 reg), Mavka (5 reg + 4 CF). Cyber Resilience: 7 FF breaches from late requirements.
 
 ### Rajeev Srivastav
 
-| Metric | 10.8 | 10.9 | Δ |
-|--------|------|------|---|
-| Breached FF | 30 | 13 | ✅ -17 |
-| Breached CF Stories | 14 | 26 | ❌ +12 |
-| Breached CF Bugs | 0 | 2 | ❌ +2 |
-| Regression total | 27 | 27 | ➡️ Same |
-| Regression hardening | 5 | 6 | ➡️ Same |
+Squads: Apex Legends, GreenBoat, Core Services
 
-**FF improved significantly** (30→13). Regressions stable. **CF breach doubled** — driven by GreenBoat (13) and Apex Legends (12) carrying stories into hardening.
+| Metric | 10.8 | 10.9 | Δ | Jira |
+|--------|------|------|---|------|
+| Breached FF | 30 | [11](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20Apex%20Legends%22%2C%22Squad%20GreenBoat%22%2C%22Squad%20Core%20Services%22%29%20AND%20filter%20%3D%2021636) | ✅ -19 | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20Apex%20Legends%22%2C%22Squad%20GreenBoat%22%2C%22Squad%20Core%20Services%22%29%20AND%20filter%20%3D%2021636) |
+| Breached CF Stories | 14 | [25](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20Apex%20Legends%22%2C%22Squad%20GreenBoat%22%2C%22Squad%20Core%20Services%22%29%20AND%20filter%20%3D%2021637) | ❌ +11 | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20Apex%20Legends%22%2C%22Squad%20GreenBoat%22%2C%22Squad%20Core%20Services%22%29%20AND%20filter%20%3D%2021637) |
+| Breached CF Bugs | 0 | [2](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20Apex%20Legends%22%2C%22Squad%20GreenBoat%22%2C%22Squad%20Core%20Services%22%29%20AND%20filter%20%3D%2021638) | ❌ +2 | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20Apex%20Legends%22%2C%22Squad%20GreenBoat%22%2C%22Squad%20Core%20Services%22%29%20AND%20filter%20%3D%2021638) |
+| Regression total | 27 | [30](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20Apex%20Legends%22%2C%22Squad%20GreenBoat%22%2C%22Squad%20Core%20Services%22%29%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | ❌ +3 | [link](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20in%20%28%22Squad%20Apex%20Legends%22%2C%22Squad%20GreenBoat%22%2C%22Squad%20Core%20Services%22%29%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| Regression hardening | 5 | 6 | ➡️ +1 | (created >= 2026-02-17) |
+
+**Per-squad regression breakdown:**
+| Squad | Regressions | Hardening | FF | CF |
+|-------|:-----------:|:---------:|:--:|:--:|
+| [GreenBoat](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20GreenBoat%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 22 | 4 | 4 | 13 |
+| [Apex Legends](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Apex%20Legends%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) | 8 | 2 | 7 | 12 |
+| Core Services | 0 | 0 | 0 | 0 |
+
+**FF improved significantly** (30→11). **Regressions slightly up** 27→30. **CF breach nearly doubled** — GreenBoat (13) + Apex Legends (12).
 
 ---
 
 ## 🔍 RCA per Metric (with 10.8 Retro Cross-Reference)
 
-### 1. Breached FF — Stories open after Feature Freeze
+### 1. Breached FF — Stories open after Feature Freeze (Total: [25](https://zerto.atlassian.net/issues/?filter=21636))
 
-| Squad | Count | Root Cause |
-|-------|-------|-----------|
-| Cyber Resilience (Shlomi) | 7 | Late requirements (LTS Support, Integration Hub received end of Sprint 3). Design approved end Sprint 4 — known FF miss, RIH filed |
-| Apex Legends (Rajeev) | 7 | Secret Centralization stories moved to "Ready for Testing" before FF, but QA bandwidth limited → acceptance after FF |
-| GreenBoat (Rajeev) | 4 | Dependencies on GB dev completion (Linux migration) + waiver to work during FF |
-| Driver (Shlomi) | 2 | All FF-breaching stories also breached CF (duplicated) |
-| Nils (Dana) | 2 | FE tweaks enabled late (same issue as 10.8) |
-| Cloud Azure (Dana) | 2 | AWS stories "ready for testing prior FF" but not accepted |
+| Squad | Count | Root Cause | Jira |
+|-------|-------|-----------|------|
+| Cyber Resilience (Shlomi) | 7 | Late requirements (LTS Support, Integration Hub received end of Sprint 3). Design approved end Sprint 4 — known FF miss, RIH filed | [7 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cyber%20Resilience%22%20AND%20filter%20%3D%2021636) |
+| Apex Legends (Rajeev) | 7 | Secret Centralization stories moved to "Ready for Testing" before FF, but QA bandwidth limited → acceptance after FF | [7 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Apex%20Legends%22%20AND%20filter%20%3D%2021636) |
+| GreenBoat (Rajeev) | 4 | Dependencies on GB dev completion (Linux migration) + waiver to work during FF | [4 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20GreenBoat%22%20AND%20filter%20%3D%2021636) |
+| Nils (Dana) | 2 | FE tweaks enabled late (same issue as 10.8) | [2 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20-%20Eng%20-%20Nils%22%20AND%20filter%20%3D%2021636) |
+| Cloud Azure (Dana) | 2 | AWS stories "ready for testing prior FF" but not accepted | [2 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cloud%20Azure%22%20AND%20filter%20%3D%2021636) |
+| AI Agents (Dana) | 2 | New squad in 10.9 — stories not completed by FF | [2 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20AI%20Agents%22%20AND%20filter%20%3D%2021636) |
+| Driver (Shlomi) | 1 | FF-breaching story also breached CF | [1 issue](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Driver%22%20AND%20filter%20%3D%2021636) |
 
 **Was this addressed from 10.8?**
 - 10.8 retro said: "Avoid enabling tweaks after FF" → ❌ Repeated (Dana/Nils)
@@ -78,14 +110,16 @@
 
 ---
 
-### 2. Breached CF — Stories still open at Code Freeze
+### 2. Breached CF — Stories still open at Code Freeze (Total: [36](https://zerto.atlassian.net/issues/?filter=21637))
 
-| Squad | Count | Root Cause |
-|-------|-------|-----------|
-| GreenBoat (Rajeev) | 13 | Public Cloud testing setup not ready for FF and still being stabilized. GB had waiver for FF work, pushed CF |
-| Apex Legends (Rajeev) | 12 | Testing started late so stories remained in testing phase past CF |
-| Cyber Resilience (Shlomi) | 4 | LTS stories (3/6 of CF breach) — known late start. Also: "Do we need to treat Testplan creation in this metric?" |
-| Driver (Shlomi) | 2 | Urgent HF pushed due to customer case (LTR). HV stabilization prolonged |
+| Squad | Count | Root Cause | Jira |
+|-------|-------|-----------|------|
+| GreenBoat (Rajeev) | 13 | Public Cloud testing setup not ready for FF and still being stabilized. GB had waiver for FF work, pushed CF | [13 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20GreenBoat%22%20AND%20filter%20%3D%2021637) |
+| Apex Legends (Rajeev) | 12 | Testing started late so stories remained in testing phase past CF | [12 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Apex%20Legends%22%20AND%20filter%20%3D%2021637) |
+| Mavka (Shlomi) | 4 | Stories carried into hardening | [4 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Mavka%22%20AND%20filter%20%3D%2021637) |
+| Cyber Resilience (Shlomi) | 4 | LTS stories (3/6 of CF breach) — known late start. Also: "Do we need to treat Testplan creation in this metric?" | [4 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cyber%20Resilience%22%20AND%20filter%20%3D%2021637) |
+| AI Agents (Dana) | 2 | New squad, stories not completed by CF | [2 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20AI%20Agents%22%20AND%20filter%20%3D%2021637) |
+| Driver (Shlomi) | 1 | Urgent HF pushed due to customer case (LTR). HV stabilization prolonged | [1 issue](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Driver%22%20AND%20filter%20%3D%2021637) |
 
 **Was this addressed from 10.8?**
 - 10.8 retro said: "Enhance ZIC quality by improving design, requirements, test planning" → ❌ CF breach worse
@@ -94,42 +128,48 @@
 
 ---
 
-### 3. Regression Total — 50 → 95 (+90%)
+### 3. Regression Total — 50 → 152 (+204%)
 
-| Squad | 10.8 | 10.9 | Δ | RCA |
-|-------|------|------|---|-----|
-| **Nils** (Dana) | 16 | 47 | +31 | React Migration — all bugs in new implementation are classified as regressions. Missing PO requirements. Tweaks activated at end of release |
-| **GreenBoat** (Rajeev) | 15 | 17 | +2 | Upgrade scenarios (10.8→10.9 migration), External Vault Secrets, EF Cache. GB/Linux migration code conflict with AWS |
-| **Driver** (Shlomi) | 1 | 8 | +7 | VME/VAIO bugs — driver loading failures, FOT IO errors, VRA sync issues. "Bugs caused by low quality dev testing" (Shlomi's finding) |
-| **Azure** (Dana) | 3 | 6 | +3 | GPv2 performance issues, recovery operations stuck — related to new GPv2 feature |
-| **VRA** (Shlomi) | 3 | 5 | +2 | Scale issues — VRA sync slow at scale, public cloud VRA version mismatch |
-| **Apex Legends** (Rajeev) | 6 | 3 | -3 | ✅ Improved — fewer regressions |
-| **Cloud Compliance** (Dana) | — | 19 | — | Security/compliance bugs. 0/19 found by automation |
-| **Mavka** (Shlomi) | — | 5 | — | 4 CF breach stories |
-| **AI Agents** (Dana) | — | 4 | — | 2 FF + 2 CF breaches. New squad in 10.9 |
-| **Core Services** (Rajeev) | — | 0 | — | No regressions |
-| **DR Cloud Enablement** (Idan Shama) | 3 | 3 | 0 | Stable (not in scope) |
+| Squad | 10.8 | 10.9 | Δ | RCA | Jira |
+|-------|------|------|---|-----|------|
+| **Nils** (Dana) | 16 | 60 | +44 | React Migration — all bugs in new implementation are classified as regressions. Missing PO requirements. Tweaks activated at end of release | [60 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20-%20Eng%20-%20Nils%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **GreenBoat** (Rajeev) | 15 | 22 | +7 | Upgrade scenarios (10.8→10.9 migration), External Vault Secrets, EF Cache. GB/Linux migration code conflict with AWS | [22 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20GreenBoat%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **Cloud Compliance** (Dana) | — | 19 | — | Security/compliance bugs. 0/19 found by automation | [19 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cloud%20Compliance%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **Driver** (Shlomi) | 1 | 11 | +10 | VME/VAIO bugs — driver loading failures, FOT IO errors, VRA sync issues. "Bugs caused by low quality dev testing" (Shlomi's finding) | [11 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Driver%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **VRA** (Shlomi) | 3 | 10 | +7 | Scale issues — VRA sync slow at scale, public cloud VRA version mismatch | [10 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20VRA%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **Azure** (Dana) | 3 | 8 | +5 | GPv2 performance issues, recovery operations stuck — related to new GPv2 feature | [8 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cloud%20Azure%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **Apex Legends** (Rajeev) | 6 | 8 | +2 | Secret Centralization + testing started late | [8 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Apex%20Legends%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **Mavka** (Shlomi) | — | 5 | — | CF breach stories | [5 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Mavka%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **AI Agents** (Dana) | — | 4 | — | 2 FF + 2 CF breaches. New squad in 10.9 | [4 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20AI%20Agents%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **Opus** (Dana) | — | 4 | — | Cloud platform regressions | [4 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cloud%20Opus%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **Cyber Resilience** (Shlomi) | — | 1 | — | Single regression | [1 issue](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cyber%20Resilience%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29) |
+| **Core Services** (Rajeev) | — | 0 | — | No regressions | — |
+| **Hyper-V** (Dana) | — | 0 | — | No regressions | — |
 
 **Was this addressed from 10.8?**
-- 10.8 said: "React — perform more side-by-side comparisons with AngularJS" → ❌ NOT DONE. Nils went 16→47
-- 10.8 said: "Increase Cypress coverage" → ❌ Automation rate dropped 32%→12.6%
+- 10.8 said: "React — perform more side-by-side comparisons with AngularJS" → ❌ NOT DONE. Nils went 16→60
+- 10.8 said: "Increase Cypress coverage" → ❌ Automation rate dropped
 - 10.8 said: "Clarify ownership for cross-team changes (GB/Linux migration)" → ❌ Same conflict repeated
-- 10.8 said: "Testing started late so regression came late" (Rajeev) → Rajeev's regressions stayed FLAT (good), but Shlomi's Driver increased due to same cause
+- 10.8 said: "Testing started late so regression came late" (Rajeev) → Apex went 6→8, Driver 1→11
 
 ---
 
-### 4. Regression During Hardening — 17 → 40 (+135%)
+### 4. Regression During Hardening — 17 → 60 (+253%)
 
-| Squad | Count | RCA |
-|-------|-------|-----|
-| **Nils** (Dana) | 20 | React tweaks turned ON during hardening → instant regressions in production code. 9/15 are React |
-| **Driver** (Shlomi) | 6 | VME/VAIO - bugs found late because testing started late |
-| **VRA** (Shlomi) | 3 | Scale bugs only visible on large setups |
-| **Azure** (Dana) | 3 | Linux migration tool must be developed after ZVM RC exists → inherently late |
-| **GreenBoat** (Rajeev) | 2 | Upgrade path bugs |
+| Squad | Count | RCA | Jira |
+|-------|-------|-----|------|
+| **Nils** (Dana) | 27 | React tweaks turned ON during hardening → instant regressions in production code | [27 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20-%20Eng%20-%20Nils%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29%20AND%20created%20%3E%3D%20%222026-02-17%22) |
+| **Driver** (Shlomi) | 10 | VME/VAIO - bugs found late because testing started late | [10 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Driver%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29%20AND%20created%20%3E%3D%20%222026-02-17%22) |
+| **VRA** (Shlomi) | 6 | Scale bugs only visible on large setups | [6 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20VRA%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29%20AND%20created%20%3E%3D%20%222026-02-17%22) |
+| **Azure** (Dana) | 4 | GPv2 + Linux migration tool must be developed after ZVM RC → inherently late | [4 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cloud%20Azure%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29%20AND%20created%20%3E%3D%20%222026-02-17%22) |
+| **Opus** (Dana) | 4 | Cloud platform regressions found in hardening | [4 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cloud%20Opus%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29%20AND%20created%20%3E%3D%20%222026-02-17%22) |
+| **GreenBoat** (Rajeev) | 4 | Upgrade path bugs | [4 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20GreenBoat%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29%20AND%20created%20%3E%3D%20%222026-02-17%22) |
+| **Cloud Compliance** (Dana) | 2 | Security bugs found in hardening | [2 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Cloud%20Compliance%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29%20AND%20created%20%3E%3D%20%222026-02-17%22) |
+| **Apex Legends** (Rajeev) | 2 | Late testing | [2 issues](https://zerto.atlassian.net/issues/?jql=%22Owning%20Team%2FSquad%5BGroup%20Picker%20%28single%20group%29%5D%22%20%3D%20%22Squad%20Apex%20Legends%22%20AND%20affectedVersion%20%3D%2010.9%20AND%20%22Regression%3F%5BDropdown%5D%22%20%3D%20Yes%20AND%20status%20not%20in%20%28Obsolete%29%20AND%20created%20%3E%3D%20%222026-02-17%22) |
+| **Cyber Resilience** (Shlomi) | 1 | Single regression in hardening | — |
 
 **Was this addressed from 10.8?**
-- 10.8 said: "Avoid enabling FE tweaks at end of release" → ❌ NOT DONE. 20/24 Dana hardening regressions are Nils/React + tweaks
+- 10.8 said: "Avoid enabling FE tweaks at end of release" → ❌ NOT DONE. 27/37 Dana hardening regressions are Nils/React
 - **New root cause:** Linux migration tool has structural dependency on RC → will always create late regressions unless decoupled
 
 ---
