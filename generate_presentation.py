@@ -447,26 +447,82 @@ add_content_slide("Org-Level Actions (Sandra)", [
     ("    Current: 44d avg. Investigate QA capacity gap.", 14, LIGHT_GRAY, False),
 ])
 
-# 25: Jira Links
-add_content_slide("Jira Links — Drill Down & Analyze", [
-    ("Dashboard & Filters:", 18, ACCENT_BLUE, True),
-    ("  • Dashboard: https://zerto.atlassian.net/jira/dashboards/10405", 13, LIGHT_GRAY, False),
-    ("  • FF Breach: https://zerto.atlassian.net/issues/?filter=21636", 13, LIGHT_GRAY, False),
-    ("  • CF Stories: https://zerto.atlassian.net/issues/?filter=21637", 13, LIGHT_GRAY, False),
-    ("  • CF Bugs: https://zerto.atlassian.net/issues/?filter=21638", 13, LIGHT_GRAY, False),
-    ("", 6, WHITE, False),
-    ("Regressions per Squad (10.9):", 18, ACCENT_BLUE, True),
-    ("  • Nils (60): Squad - Eng - Nils + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • GreenBoat (22): Squad GreenBoat + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • Cloud Compliance (19): Squad Cloud Compliance + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • Driver (11): Squad Driver + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • VRA (10): Squad VRA + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • Azure (8): Squad Cloud Azure + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("  • Apex (8): Squad Apex Legends + affectedVersion=10.9 + Regression=Yes", 13, LIGHT_GRAY, False),
-    ("", 6, WHITE, False),
-    ("All 10.9 Regressions:", 18, ACCENT_BLUE, True),
-    ("  • affectedVersion=10.9 AND Regression=Yes AND status not in (Obsolete)", 13, LIGHT_GRAY, False),
-])
+# 25: Jira Links (with clickable hyperlinks)
+import urllib.parse
+
+def jira_squad_reg_url(squad):
+    jql = f'"Owning Team/Squad[Group Picker (single group)]" = "{squad}" AND affectedVersion = 10.9 AND "Regression?[Dropdown]" = Yes AND status not in (Obsolete)'
+    return f"https://zerto.atlassian.net/issues/?jql={urllib.parse.quote(jql)}"
+
+def add_links_slide():
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_dark_bg(slide)
+    txBox = slide.shapes.add_textbox(Inches(0.5), Inches(0.2), Inches(12), Inches(0.7))
+    tf = txBox.text_frame
+    p = tf.paragraphs[0]
+    p.text = "Jira Links — Click to Verify"
+    p.font.size = Pt(26)
+    p.font.bold = True
+    p.font.color.rgb = ACCENT_BLUE
+
+    txBox2 = slide.shapes.add_textbox(Inches(0.5), Inches(1.0), Inches(12.3), Inches(6.0))
+    tf2 = txBox2.text_frame
+    tf2.word_wrap = True
+
+    links = [
+        ("Filters:", None, True),
+        ("  10.9 Dashboard", "https://zerto.atlassian.net/jira/dashboards/15285"),
+        ("  FF Breach (25 stories)", "https://zerto.atlassian.net/issues/?filter=21636"),
+        ("  CF Breach Stories (36)", "https://zerto.atlassian.net/issues/?filter=21637"),
+        ("  CF Breach Bugs (6)", "https://zerto.atlassian.net/issues/?filter=21638"),
+        ("", None),
+        ("Regressions per Squad:", None, True),
+        ("  Nils — 60 regressions", jira_squad_reg_url("Squad - Eng - Nils")),
+        ("  GreenBoat — 22 regressions", jira_squad_reg_url("Squad GreenBoat")),
+        ("  Cloud Compliance — 19 regressions", jira_squad_reg_url("Squad Cloud Compliance")),
+        ("  Driver — 11 regressions", jira_squad_reg_url("Squad Driver")),
+        ("  VRA — 10 regressions", jira_squad_reg_url("Squad VRA")),
+        ("  Azure — 8 regressions", jira_squad_reg_url("Squad Cloud Azure")),
+        ("  Apex Legends — 8 regressions", jira_squad_reg_url("Squad Apex Legends")),
+        ("  Mavka — 5 regressions", jira_squad_reg_url("Squad Mavka")),
+        ("  AI Agents — 4 regressions", jira_squad_reg_url("Squad AI Agents")),
+        ("  Opus — 4 regressions", jira_squad_reg_url("Squad Cloud Opus")),
+        ("  Cyber Resilience — 1 regression", jira_squad_reg_url("Squad Cyber Resilience")),
+    ]
+
+    for i, item in enumerate(links):
+        if len(item) == 3:
+            text, url, is_header = item
+        else:
+            text, url = item
+            is_header = False
+
+        if i == 0:
+            para = tf2.paragraphs[0]
+        else:
+            para = tf2.add_paragraph()
+
+        if not text:
+            para.space_after = Pt(4)
+            continue
+
+        run = para.add_run()
+        run.text = text
+        if is_header:
+            run.font.size = Pt(16)
+            run.font.bold = True
+            run.font.color.rgb = ACCENT_BLUE
+        else:
+            run.font.size = Pt(13)
+            run.font.color.rgb = LIGHT_GRAY
+            if url:
+                run.hyperlink.address = url
+                run.font.color.rgb = RGBColor(0x58, 0xA6, 0xFF)  # clickable blue
+        para.space_after = Pt(3)
+
+    return slide
+
+add_links_slide()
 
 # 26: Summary
 add_content_slide("Summary & Next Steps", [
