@@ -104,6 +104,10 @@
 | **Azure** (Dana) | 3 | 6 | +3 | GPv2 performance issues, recovery operations stuck — related to new GPv2 feature |
 | **VRA** (Shlomi) | 3 | 5 | +2 | Scale issues — VRA sync slow at scale, public cloud VRA version mismatch |
 | **Apex Legends** (Rajeev) | 6 | 3 | -3 | ✅ Improved — fewer regressions |
+| **Cloud Compliance** (Dana) | — | 19 | — | Security/compliance bugs. 0/19 found by automation |
+| **Mavka** (Shlomi) | — | 5 | — | 4 CF breach stories |
+| **AI Agents** (Dana) | — | 4 | — | 2 FF + 2 CF breaches. New squad in 10.9 |
+| **Core Services** (Rajeev) | — | 0 | — | No regressions |
 | **DR Cloud Enablement** (Idan Shama) | 3 | 3 | 0 | Stable (not in scope) |
 
 **Was this addressed from 10.8?**
